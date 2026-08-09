@@ -91,7 +91,7 @@ const emphases = [
 const buttons = [
   {
     disabled: false,
-    name: "Paper (PDF)",
+    name: "Paper",
     link: "./POEF_NDSS2027.pdf",
     component: Document,
   },
@@ -103,13 +103,13 @@ const buttons = [
   },
   {
     disabled: false,
-    name: "Code (POEF)",
+    name: "Code",
     link: "https://github.com/ZJUshine/POEF",
     component: Promotion,
   },
   {
     disabled: false,
-    name: "Harmful-Behavior",
+    name: "Dataset",
     link: "https://github.com/ZJUshine/Harmful-Behavior",
     component: Coin,
   },

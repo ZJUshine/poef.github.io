@@ -15,7 +15,7 @@ const logo = {
     link: "#",
 }
 
-// 右侧更多菜单：放另一篇论文
+// 更多菜单
 const more_paper = {
     name: "Phantom Menace - AAAI 2026",
     link: "https://ojs.aaai.org/index.php/AAAI/article/view/40881",
