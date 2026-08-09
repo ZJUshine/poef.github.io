@@ -39,8 +39,8 @@ const authors = [
   {
     name: "Xinfeng Li",
     icon: "",
-    homepage: "",
-    address_flag: "1"
+    homepage: "https://letterligo.netlify.app/",
+    address_flag: "2,*"
   },
   {
     name: "Chi Zhang",
@@ -52,7 +52,7 @@ const authors = [
     name: "Xiaoyu Ji",
     icon: "",
     homepage: "https://sites.google.com/site/xiaoyuijh/home",
-    address_flag: "1"
+    address_flag: "1,*"
   },
   {
     name: "Wenyuan Xu",
@@ -70,15 +70,21 @@ const addresses = [
     icon: "https://www.zju.edu.cn/_upload/article/images/c3/98/1fb1d281492eb477a098ef7a2901/05966b26-ab45-470d-94c1-99b1e02d12f4.png",
     homepage: "https://www.zju.edu.cn/"
   },
+  {
+    address_flag: "2",
+    name: "The Hong Kong Polytechnic University",
+
+    icon: "https://www.polyu.edu.hk/assets/img/main-logo-3x.png",
+    homepage: "https://www.polyu.edu.hk/"
+  },
 ]
 
-// 共一和通讯提示（等确认后再填，例如 "#: Equal Contribution. *: Corresponding Author."）
-const con_and_corresponding_author = ""
+// 共一和通讯提示
+const con_and_corresponding_author = "*: Corresponding Author."
 
 // 强调内容
 const emphases = [
   "🎉 Accepted to NDSS 2027",
-  "⚠️ POEF achieves an 80% behavior jailbreak success rate on commercial LLM-based robots",
 ]
 
 // 提供引导资料链接
