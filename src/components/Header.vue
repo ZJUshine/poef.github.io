@@ -16,9 +16,8 @@ const logo = {
 }
 
 // 右侧更多菜单：放另一篇论文
-// TODO: 把 name 换成这篇 AAAI 论文的真实标题（我无法访问 ojs.aaai.org 取标题）
 const more_paper = {
-    name: "AAAI 2026",
+    name: "Phantom Menace - AAAI 2026",
     link: "https://ojs.aaai.org/index.php/AAAI/article/view/40881",
 }
 

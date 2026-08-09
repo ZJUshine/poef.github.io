@@ -1,13 +1,3 @@
-# Harmful-Behavior Dataset
-
-To fill the absence of behavior-level security benchmarks for LLM-based robots, we build the **Harmful-Behavior** dataset: **300 desktop manipulation tasks** (150 harmful for security, 150 harmless for usability) spanning **8 common robot scenarios** such as kitchen, bedroom, and office. Every task ships with an instruction, a reference policy, an explicit success criterion, and a 3D simulation scene built on CoppeliaSim and RLBench with a Franka Emika Panda arm and RGB-D cameras.
-
-![](./images/Figure_3_1.png)
-
-Tasks are organized by the entity they endanger — **human, object, or environment** — and subdivided into six damage mechanisms, following ISO 10218 and the ASIMOV Benchmark.
-
-![](./images/Figure_3_2.png)
-
 # POEF Framework
 
 **POEF** (**PO**licy **EF**fective Jailbreak) optimizes a word-level adversarial suffix that, appended to a harmful instruction, induces the robot to generate policies that are harmful **and** physically executable. It has two components:

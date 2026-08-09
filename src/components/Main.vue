@@ -2,6 +2,7 @@
 import Title from './sections/Title.vue'
 import Teaser from './sections/Teaser.vue'
 import Abstract from './sections/Abstract.vue'
+import Dataset from './sections/Dataset.vue'
 import Markdown from './sections/Markdown.vue'
 import BibTeX from './sections/BibTeX.vue'
 import Carousel from './sections/Carousel.vue'
@@ -18,6 +19,7 @@ export default {
     Title,
     Teaser,
     Abstract,
+    Dataset,
     Markdown,
     BibTeX,
     Carousel,
@@ -33,6 +35,7 @@ export default {
   <Title/>
   <Teaser/>
   <Abstract/>
+  <Dataset/>
   <Echart/>
   <Markdown/>
   <Table/>

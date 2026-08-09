@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 import { ElIcon } from 'element-plus'
-import { Document, Files, DataAnalysis, Film, Cpu } from '@element-plus/icons-vue'
+import { Document, Reading, Promotion, Coin, Film } from '@element-plus/icons-vue'
 
 // logo地址，没有则置为""即可
 const logo = ''
@@ -74,7 +74,7 @@ const addresses = [
     address_flag: "2",
     name: "The Hong Kong Polytechnic University",
 
-    icon: "https://www.polyu.edu.hk/assets/img/main-logo-3x.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2veCpYogOzF925TaWOPJIT8OUQG3Ob-tpHIVgEl6jlQ&s=10",
     homepage: "https://www.polyu.edu.hk/"
   },
 ]
@@ -99,25 +99,19 @@ const buttons = [
     disabled: false,
     name: "arXiv",
     link: "https://arxiv.org/abs/2412.16633",
-    component: Document,
+    component: Reading,
   },
   {
     disabled: false,
     name: "Code (POEF)",
     link: "https://github.com/ZJUshine/POEF",
-    component: Files,
+    component: Promotion,
   },
   {
     disabled: false,
     name: "Harmful-Behavior",
     link: "https://github.com/ZJUshine/Harmful-Behavior",
-    component: DataAnalysis,
-  },
-  {
-    disabled: false,
-    name: "Homepage Repo",
-    link: "https://github.com/ZJUshine/poef.github.io",
-    component: Cpu,
+    component: Coin,
   },
   {
     disabled: false,
