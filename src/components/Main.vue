@@ -8,7 +8,6 @@ import Carousel from './sections/Carousel.vue'
 import Video from './sections/Video.vue'
 import Echart from './sections/Echart.vue'
 import Table from './sections/Table.vue'
-import Collapse from './sections/Collapse.vue'
 // 评论区默认关闭：模板自带的 Twikoo 后端是模板作者的 Vercel 实例，
 // 留言会写进对方的数据库。要启用请先在 Comment.vue 里换成自己的 envId，
 // 再把下面的 import 和模板里的 <Comment/> 取消注释。
@@ -24,7 +23,6 @@ export default {
     Carousel,
     Video,
     Echart,
-    Collapse,
     Table,
     // Comment,
   }
@@ -38,9 +36,8 @@ export default {
   <Echart/>
   <Markdown/>
   <Table/>
-  <Video/>
   <Carousel/>
-  <Collapse/>
+  <Video/>
   <BibTeX/>
   <!-- <Comment/> -->
 </template>

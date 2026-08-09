@@ -1,22 +1,3 @@
-# The Intent–Behavior Gap
-
-An LLM-based robot turns a natural-language instruction into a sequence of control APIs. Jailbreaking such a robot therefore has two very different meanings:
-
-- **Intent jailbreak** — the planner stops refusing and emits a malicious-looking policy.
-- **Behavior jailbreak** — the emitted policy is *also* syntactically valid, physically feasible, and actually executed by the robot.
-
-Applying traditional LLM jailbreaks (GCG, GPTFUZZER, TAP) to LLM-based robots, we measure an **average intent–behavior gap of 45%**: the attack looks successful on paper, but the robot does nothing harmful. We trace the gap to three failure modes:
-
-1. **Hallucinated control APIs** — the LLM invents primitives the controller does not expose (e.g. `pour_water()` when only `grasp`, `move_to`, and `open_gripper` exist).
-2. **Logical errors** — syntactically intact but semantically incoherent: wrong target object, missing prerequisite steps (placing before grasping), or contradictory ordering.
-3. **Violations of physical constraints** — kinematically infeasible policies, e.g. ignoring the single-arm constraint.
-
-The root cause is that existing attacks optimize purely for harmful *text* and ignore robot-specific executability and physical feasibility, in both their optimization objective and their success metric.
-
-![](./images/Figure_2.png)
-
-*The LLM-based robotic system consists of perception, planning, and execution modules. The LLM serves as a policy generator that converts multi-modal user inputs (voice and vision) into high-level robot policies.*
-
 # Harmful-Behavior Dataset
 
 To fill the absence of behavior-level security benchmarks for LLM-based robots, we build the **Harmful-Behavior** dataset: **300 desktop manipulation tasks** (150 harmful for security, 150 harmless for usability) spanning **8 common robot scenarios** such as kitchen, bedroom, and office. Every task ships with an instruction, a reference policy, an explicit success criterion, and a 3D simulation scene built on CoppeliaSim and RLBench with a Franka Emika Panda arm and RGB-D cameras.

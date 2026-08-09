@@ -128,24 +128,6 @@ export default {
         </el-tabs>
       </el-col>
     </el-row>
-
-    <!-- saferobot 系统提示词的防御雷达图（论文 Figure 4） -->
-    <el-row justify="center">
-      <el-col :xs="24" :sm="20" :md="16" :lg="14" :xl="12">
-        <el-image
-          class="figure"
-          src="./images/Figure_4.png"
-          fit="contain"
-          :preview-src-list="['./images/Figure_4.png']"
-          hide-on-click-modal
-        />
-        <p class="caption">
-          The SafeRobot system prompt helps unevenly across risk types: it suppresses direct damage (especially to
-          people) far better than long-horizon damage such as chemical harm. It is also not universally deployable —
-          it costs GPT-4o 82.67 points of task success rate, and barely secures Gemma-2-9B at all.
-        </p>
-      </el-col>
-    </el-row>
   </div>
 
 </template>
@@ -167,21 +149,5 @@ export default {
   line-height: 1.75rem;
   text-align: justify;
   margin: 20px 20px 0px 20px;
-}
-
-/* 论文插图 */
-.figure {
-  width: 100%;
-  margin-top: 30px;
-  cursor: zoom-in;
-}
-
-/* 图注 */
-.caption {
-  font-size: 14px;
-  line-height: 1.6rem;
-  color: var(--el-text-color-secondary);
-  text-align: justify;
-  margin: 12px 20px 0px 20px;
 }
 </style>

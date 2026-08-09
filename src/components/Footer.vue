@@ -19,8 +19,6 @@ const links = {
         <p class="footer">
           <b>POEF</b> — <i>Easier Said Than Done: Unpacking the Intent–Behavior Gap in Jailbreaking LLM-based Robots</i>.<br/>
 
-          Source of this page: <a :href="links.repo">ZJUshine/poef.github.io</a>.<br/>
-
           Built from the <a :href="links.template">academic project page template</a>, inspired by
           <a :href="links.Nerfies">Nerfies</a>, powered by
           <a :href="links.Vue">Vue</a>,

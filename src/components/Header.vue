@@ -15,28 +15,11 @@ const logo = {
     link: "#",
 }
 
-// 右侧更多菜单
-const more_links = {
-    "Paper": {
-        name: "Paper (PDF)",
-        link: "./POEF_NDSS2027.pdf",
-    },
-    "arXiv": {
-        name: "arXiv - 2412.16633",
-        link: "https://arxiv.org/abs/2412.16633",
-    },
-    "Code": {
-        name: "Code - POEF",
-        link: "https://github.com/ZJUshine/POEF",
-    },
-    "Dataset": {
-        name: "Dataset - Harmful-Behavior",
-        link: "https://github.com/ZJUshine/Harmful-Behavior",
-    },
-    "USSLab": {
-        name: "USSLab, Zhejiang University",
-        link: "http://usslab.org/",
-    },
+// 右侧更多菜单：放另一篇论文
+// TODO: 把 name 换成这篇 AAAI 论文的真实标题（我无法访问 ojs.aaai.org 取标题）
+const more_paper = {
+    name: "AAAI 2026",
+    link: "https://ojs.aaai.org/index.php/AAAI/article/view/40881",
 }
 
 </script>
@@ -68,19 +51,7 @@ const more_links = {
         <el-sub-menu index="2">
             <template #title>More</template>
             <el-menu-item index="2-1">
-                <a :href=more_links.Paper.link>{{ more_links.Paper.name }}</a>
-            </el-menu-item>
-            <el-menu-item index="2-2">
-                <a :href=more_links.arXiv.link>{{ more_links.arXiv.name }}</a>
-            </el-menu-item>
-            <el-menu-item index="2-3">
-                <a :href=more_links.Code.link>{{ more_links.Code.name }}</a>
-            </el-menu-item>
-            <el-menu-item index="2-4">
-                <a :href=more_links.Dataset.link>{{ more_links.Dataset.name }}</a>
-            </el-menu-item>
-            <el-menu-item index="2-5">
-                <a :href=more_links.USSLab.link>{{ more_links.USSLab.name }}</a>
+                <a :href=more_paper.link>{{ more_paper.name }}</a>
             </el-menu-item>
         </el-sub-menu>
 

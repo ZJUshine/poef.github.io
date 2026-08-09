@@ -28,14 +28,6 @@ export default {
           path: "./images/Figure_7_compress.png",
           caption: "Ten real-world jailbreak scenarios. Top: the full policy sequence for “pour water on socket” on both platforms. Bottom: snapshots of the remaining scenarios covering human, object, and environment risks.",
         },
-        {
-          path: "./images/Figure_8.png",
-          caption: "Behavior jailbreak on the commercial Unitree G1 humanoid system, showing that POEF transfers from manipulation to whole-body motion control.",
-        },
-        {
-          path: "./images/Figure_1_2.png",
-          caption: "Conceptually, POEF achieves policy generation and physical effectiveness at the same time — the quadrant that prior jailbreaks never reach.",
-        },
       ],
     }
   }
