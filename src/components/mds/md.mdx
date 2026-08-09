@@ -1,53 +1,40 @@
-# Markdown (H1)
+# The Intent–Behavior Gap
 
-The render result of `md.mdx` is here.
+An LLM-based robot turns a natural-language instruction into a sequence of control APIs. Jailbreaking such a robot therefore has two very different meanings:
 
-## Good (H2)
+- **Intent jailbreak** — the planner stops refusing and emits a malicious-looking policy.
+- **Behavior jailbreak** — the emitted policy is *also* syntactically valid, physically feasible, and actually executed by the robot.
 
-### Nice (H3)
+Applying traditional LLM jailbreaks (GCG, GPTFUZZER, TAP) to LLM-based robots, we measure an **average intent–behavior gap of 45%**: the attack looks successful on paper, but the robot does nothing harmful. We trace the gap to three failure modes:
 
-[**Diffusion models**](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/) are a class of generative models in machine learning that have gained significant attention in recent years. 
+1. **Hallucinated control APIs** — the LLM invents primitives the controller does not expose (e.g. `pour_water()` when only `grasp`, `move_to`, and `open_gripper` exist).
+2. **Logical errors** — syntactically intact but semantically incoherent: wrong target object, missing prerequisite steps (placing before grasping), or contradictory ordering.
+3. **Violations of physical constraints** — kinematically infeasible policies, e.g. ignoring the single-arm constraint.
 
-**Text-to-image diffusion models** have various application scenarios, including:
+The root cause is that existing attacks optimize purely for harmful *text* and ignore robot-specific executability and physical feasibility, in both their optimization objective and their success metric.
 
-- **Art & Design**: Used by artists for creative art and fashion designers to generate clothing renderings.
-- **Advertising & Marketing**: Helps in creating advertising posters and product promotion maps.
-- **Game & Film**: Applied in game scene and character design, as well as film and television concept design...
+![](./images/Figure_2.png)
 
-> Thegeneral training steps of diffusion models are as follows:
+*The LLM-based robotic system consists of perception, planning, and execution modules. The LLM serves as a policy generator that converts multi-modal user inputs (voice and vision) into high-level robot policies.*
 
-1. Data collection
-2. Noise addition
-3. Model building
-4. Training
-5. Evaluation
-6. Deployment
+# Harmful-Behavior Dataset
 
+To fill the absence of behavior-level security benchmarks for LLM-based robots, we build the **Harmful-Behavior** dataset: **300 desktop manipulation tasks** (150 harmful for security, 150 harmless for usability) spanning **8 common robot scenarios** such as kitchen, bedroom, and office. Every task ships with an instruction, a reference policy, an explicit success criterion, and a 3D simulation scene built on CoppeliaSim and RLBench with a Franka Emika Panda arm and RGB-D cameras.
 
-```
-import torch 
+![](./images/Figure_3_1.png)
 
-def denoise():
-    pass
-```
+Tasks are organized by the entity they endanger — **human, object, or environment** — and subdivided into six damage mechanisms, following ISO 10218 and the ASIMOV Benchmark.
 
-* [ ] to do
-* [x] done
-* [x] ~114514~
+![](./images/Figure_3_2.png)
 
-![](./logo_vision_aigc.png)
+# POEF Framework
 
-Lift ($$L$$) can be determined by Lift Coefficient ($$C_L$$) like the following
-equation.
+**POEF** (**PO**licy **EF**fective Jailbreak) optimizes a word-level adversarial suffix that, appended to a harmful instruction, induces the robot to generate policies that are harmful **and** physically executable. It has two components:
 
-$$
-L = \frac{1}{2} \rho v^2 S C_L
-$$
+**Hidden-layer gradient optimizer.** Rather than chasing an affirmative token prefix, POEF anchors on the *hidden states* of an unaligned reference LLM. A greedy coordinate-gradient search minimizes the negative cosine similarity between the victim's and the reference's final-token hidden states, coupling three otherwise-disjoint signals — safety-alignment bypass, control-API validity, and kinematic feasibility — into a single objective.
 
+**Multi-agent evaluator.** Four specialized agents independently score each generated policy on *acceptance*, *harmfulness*, *logical correctness*, and *conciseness*. Their consensus maps to a 1–5 BJSR score (≥4 = behavior jailbreak) and is fed back to the optimizer.
 
-### Table (H3)
+A **word-level candidate-token constraint** keeps the suffix pronounceable, so it survives voice injection through the robot's microphone: WER and CER are both **0.00** across Wav2Vec 2.0, HuBERT, and Whisper.
 
-| a       | b       | c     |  d      |
-| -       | :-      | -:    | :-:     |
-| Alpha   | Bravo   | Alpha | Bravo   |
-| 中文    | Charlie | 👩‍❤️‍👩    | Delta   |
+![](./images/Figure_5.png)

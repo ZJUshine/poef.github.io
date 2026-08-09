@@ -1,45 +1,64 @@
 <script lang="ts" setup>
 
 import { ElIcon } from 'element-plus'
-import { Document, Files, MagicStick, Picture, DataAnalysis, Film } from '@element-plus/icons-vue'
+import { Document, Files, DataAnalysis, Film, Cpu } from '@element-plus/icons-vue'
 
 // logo地址，没有则置为""即可
-const logo = './logo.png'
+const logo = ''
 
 // 标题
-const title = 'Academic Project Page Template'
+const title = 'Easier Said Than Done:'
 
 // 标题颜色
 const title_color = '#000000'
 
 // 标题补充，没有则置为''即可
-const title_supp = ' (Vue based)'
+const title_supp = ' Unpacking the Intent–Behavior Gap in Jailbreaking LLM-based Robots'
 
 // 标题补充颜色
-const title_supp_color = '#42B883'
+const title_supp_color = '#C0392B'
 
 // 按钮颜色
 const btn_color = '#444444'
 
 // 作者清单（包含作者姓名、头像、主页、地址序号）
+// 名单沿用 arXiv:2412.16633 (POEX) 的作者顺序
 const authors = [
   {
-    name: "Your Name",
-    icon: "./icon/junyaohu.jpg",
-    homepage: "https://junyaohu.github.io/",
-    address_flag: "1,#"
+    name: "Xuancun Lu",
+    icon: "https://www.zjushine.top/images/cat-512x512.png",
+    homepage: "https://zjushine.github.io/",
+    address_flag: "1"
   },
   {
-    name: "Anya Forger",
-    icon: "./icon/anya.jpg",
-    homepage: "https://www.bilibili.com/video/BV1jv4y1P7Bb",
-    address_flag: "2,#"
+    name: "Zhengxian Huang",
+    icon: "",
+    homepage: "",
+    address_flag: "1"
   },
   {
-    name: "BugCat Capoo",
-    icon: "./icon/capoo.webp",
-    homepage: "https://zh.moegirl.org.cn/%E7%8C%AB%E7%8C%AB%E8%99%AB%E5%92%96%E6%B3%A2",
-    address_flag: "1,*"
+    name: "Xinfeng Li",
+    icon: "",
+    homepage: "",
+    address_flag: "1"
+  },
+  {
+    name: "Chi Zhang",
+    icon: "",
+    homepage: "",
+    address_flag: "1"
+  },
+  {
+    name: "Xiaoyu Ji",
+    icon: "",
+    homepage: "https://sites.google.com/site/xiaoyuijh/home",
+    address_flag: "1"
+  },
+  {
+    name: "Wenyuan Xu",
+    icon: "",
+    homepage: "https://scholar.google.com/citations?user=FCsdj0YAAAAJ",
+    address_flag: "1"
   },
 ]
 
@@ -47,77 +66,57 @@ const authors = [
 const addresses = [
   {
     address_flag: "1",
-    name: "Home University",
-    icon: "./icon/home.png",
-    homepage: "https://github.com/hmuniversity"
-  },
-  {
-    address_flag: "2",
-    name: "IKUN University",
-    icon: "./icon/ikun.avif",
-    homepage: "https://www.bilibili.com/video/BV178411Y7QB"
+    name: "Zhejiang University",
+    icon: "https://www.zju.edu.cn/_upload/article/images/c3/98/1fb1d281492eb477a098ef7a2901/05966b26-ab45-470d-94c1-99b1e02d12f4.png",
+    homepage: "https://www.zju.edu.cn/"
   },
 ]
 
-// 共一和通讯提示
-const con_and_corresponding_author = 
-  "#: Equal Contribution. *: Corresponding Author."
-
-// 最新消息
-const news = "🔥 [2024-12-15] This template project is still under development."
+// 共一和通讯提示（等确认后再填，例如 "#: Equal Contribution. *: Corresponding Author."）
+const con_and_corresponding_author = ""
 
 // 强调内容
 const emphases = [
-  "🎉 [ABCD 2024] Poster",
-  "🥰 欢迎关注“减论”微信公众号/B站/知乎/小红书",
-  "传递人工智能算法科普教育的减约理解",
-  "提升信息效率及认知维度"
+  "🎉 Accepted to NDSS 2027",
+  "⚠️ POEF achieves an 80% behavior jailbreak success rate on commercial LLM-based robots",
 ]
 
 // 提供引导资料链接
 const buttons = [
   {
-    disabled: true,
-    name: "Paper",
-    component: Document,
-  },
-  {
-    disabled: true,
-    name: "中译版",
+    disabled: false,
+    name: "Paper (PDF)",
+    link: "./POEF_NDSS2027.pdf",
     component: Document,
   },
   {
     disabled: false,
-    name: "Code",
-    link: "https://github.com/JunyaoHu/academic-project-page-template-vue",
+    name: "arXiv",
+    link: "https://arxiv.org/abs/2412.16633",
+    component: Document,
+  },
+  {
+    disabled: false,
+    name: "Code (POEF)",
+    link: "https://github.com/ZJUshine/POEF",
     component: Files,
   },
   {
     disabled: false,
-    name: "Demo",
-    link: "https://junyaohu.github.io/academic-project-page-template-vue",
-    component: MagicStick,
-  },
-  {
-    disabled: true,
-    name: "Poster",
-    component: Picture,
-  },
-  {
-    disabled: true,
-    name: "Slide",
+    name: "Harmful-Behavior",
+    link: "https://github.com/ZJUshine/Harmful-Behavior",
     component: DataAnalysis,
   },
   {
     disabled: false,
-    name: "Video (减论)",
-    link: "https://www.bilibili.com/video/BV15XkgYiE73/",
-    component: Film,
+    name: "Homepage Repo",
+    link: "https://github.com/ZJUshine/poef.github.io",
+    component: Cpu,
   },
   {
     disabled: false,
-    name: "Video (Tutorial)",
-    link: "https://www.bilibili.com/video/BV1oUrfYzEqZ",
+    name: "Video",
+    link: "https://www.youtube.com/channel/UC9V50MPoBI4EbUE2pgVSIuw",
     component: Film,
   },
 ]
@@ -130,7 +129,11 @@ const buttons = [
     <!-- 最新消息提示 -->
     <el-row justify="center">
       <el-col :span="24">
-        <el-alert title="🔥 This template is still under development." type="success" />
+        <el-alert
+          title="🔥 Welcome to the POEF project homepage — accepted to NDSS 2027."
+          type="success"
+          :closable="false"
+        />
       </el-col>
     </el-row>
 
@@ -174,7 +177,7 @@ const buttons = [
     </el-row>
 
     <!-- 共一和通讯提示内容 -->
-    <el-row justify="center" class="con-cor">
+    <el-row v-if="con_and_corresponding_author" justify="center" class="con-cor">
         {{ con_and_corresponding_author }}
     </el-row>
 
@@ -213,6 +216,35 @@ const buttons = [
   text-align: center;
 }
 
+/* 标题较长，窄屏下必须缩小字号，否则一个词一行 */
+@media (max-width: 992px) {
+  .paper-title {
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin: 24px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .paper-title {
+    font-size: 22px;
+    letter-spacing: 0px;
+    margin: 20px 8px;
+  }
+
+  .emphasis {
+    font-size: 17px;
+  }
+
+  .author, .address {
+    font-size: 15px;
+  }
+
+  .btn-text {
+    font-size: 15px;
+  }
+}
+
 /* 姓名和地址按钮 */
 .title-button {
   margin: 10px 3px;
@@ -237,7 +269,7 @@ const buttons = [
 
 /* 姓名上标属性 */
 .name_sup {
-  color: #606266; 
+  color: #606266;
   margin-left: 3px;
 }
 
@@ -248,7 +280,7 @@ const buttons = [
 
 /* 地址上标属性 */
 .address_sup {
-  color: #606266; 
+  color: #606266;
   margin-right: 1px;
 }
 
@@ -290,7 +322,7 @@ const buttons = [
 }
 
 .logo {
-  width: 150px; 
+  width: 150px;
   height: 150px;
   border-radius: 50%;
   box-shadow: #ced3dc 0px 0px 3px 2px;

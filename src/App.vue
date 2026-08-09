@@ -43,6 +43,22 @@ h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
 }
 
+/* 各个区块的标题 */
+.section-title {
+  font-family: "MyFont", Verdana, sans-serif;
+  letter-spacing: 2px;
+  font-size: 32px;
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+}
+
 .el-header {
   padding: 0px;
 }

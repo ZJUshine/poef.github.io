@@ -2,12 +2,16 @@
 export default {
   data() {
     return {
+      // NDSS 2027 的正式条目出来之后，把下面的 arXiv 条目换掉
       bibtex: [
-        "@article{junyaohu2023template,",
-        "    title={Academic Project Page Template Vue},",
-        "    author={Hu, Junyao},",
-        "    journal={GitHub},",
-        "    year={2023}",
+        "@misc{lu2025poexpolicyexecutablejailbreak,",
+        "    title={POEX: Towards Policy Executable Jailbreak Attacks Against the LLM-based Robots},",
+        "    author={Xuancun Lu and Zhengxian Huang and Xinfeng Li and Chi Zhang and Xiaoyu Ji and Wenyuan Xu},",
+        "    year={2025},",
+        "    eprint={2412.16633},",
+        "    archivePrefix={arXiv},",
+        "    primaryClass={cs.RO},",
+        "    url={https://arxiv.org/abs/2412.16633},",
         "}",
       ],
     }
@@ -82,8 +86,15 @@ pre {
 }
 
 pre code {
-  font-size: 18px;
+  font-size: 15px;
   background: #ffffff;
+}
+
+/* 窄屏下缩小字号，避免长行被卡片裁掉 */
+@media (max-width: 768px) {
+  pre code {
+    font-size: 12px;
+  }
 }
 
 

@@ -6,25 +6,26 @@ const links = {
     Vite: "https://cn.vitejs.dev/",
     ElementPlus: "https://element-plus.org/zh-CN/",
     template: "https://github.com/JunyaoHu/academic-project-page-template-vue",
+    repo: "https://github.com/ZJUshine/poef.github.io",
 }
 </script>
 
 <template>
-  
+
   <div class="bg">
-    
-    <el-watermark :content="['JunyaoHu', 'Academic Project', 'Page Template']" :gap="['60','0']" :z-index="0">
+
+    <el-watermark :content="['POEF', 'NDSS 2027']" :gap="['60','0']" :z-index="0">
       <el-row justify="center">
         <p class="footer">
-          This template is inspired by 
-          <a :href="links.Nerfies">Nerfies</a>,<br/>
-          
-          powered by 
-          <a :href="links.Vue">Vue</a>, 
+          <b>POEF</b> — <i>Easier Said Than Done: Unpacking the Intent–Behavior Gap in Jailbreaking LLM-based Robots</i>.<br/>
+
+          Source of this page: <a :href="links.repo">ZJUshine/poef.github.io</a>.<br/>
+
+          Built from the <a :href="links.template">academic project page template</a>, inspired by
+          <a :href="links.Nerfies">Nerfies</a>, powered by
+          <a :href="links.Vue">Vue</a>,
           <a :href="links.Vite">Vite</a>, and
-          <a :href="links.ElementPlus">Element Plus</a>.<br/>
-          
-          You can fork🛠️ / star✨/ PR📃 from <a :href="links.template">here</a>.
+          <a :href="links.ElementPlus">Element Plus</a>.
         </p>
       </el-row>
     </el-watermark>

@@ -1,61 +1,46 @@
 <script>
 import Title from './sections/Title.vue'
+import Teaser from './sections/Teaser.vue'
 import Abstract from './sections/Abstract.vue'
 import Markdown from './sections/Markdown.vue'
 import BibTeX from './sections/BibTeX.vue'
 import Carousel from './sections/Carousel.vue'
 import Video from './sections/Video.vue'
-import ImageSlider from './sections/ImageSlider.vue'
-import ImageSliderInner from './sections/ImageSliderInner.vue'
-import ImageSelector from './sections/ImageSelector.vue'
 import Echart from './sections/Echart.vue'
 import Table from './sections/Table.vue'
 import Collapse from './sections/Collapse.vue'
-import SeletionForComparison from './sections/SeletionForComparison.vue'
-import Comment from './sections/Comment.vue'
-import Latex from './sections/Latex.vue'
-import Model3D from './sections/Model3D.vue'
-import GaussianSplats3D from './sections/GaussianSplats3D.vue'
+// 评论区默认关闭：模板自带的 Twikoo 后端是模板作者的 Vercel 实例，
+// 留言会写进对方的数据库。要启用请先在 Comment.vue 里换成自己的 envId，
+// 再把下面的 import 和模板里的 <Comment/> 取消注释。
+// import Comment from './sections/Comment.vue'
 
 export default {
   components: {
     Title,
+    Teaser,
     Abstract,
     Markdown,
     BibTeX,
     Carousel,
     Video,
-    ImageSlider,
-    ImageSliderInner,
-    ImageSelector,
     Echart,
     Collapse,
     Table,
-    SeletionForComparison,
-    Comment,
-    Latex,
-    Model3D,
-    GaussianSplats3D
+    // Comment,
   }
 }
 </script>
 
 <template>
   <Title/>
-  <Carousel/>
-  <Video/>
+  <Teaser/>
   <Abstract/>
-  <Markdown/>
-  <Latex/>
-  <Table/>
-  <Collapse/>
   <Echart/>
-  <Model3D/>
-  <GaussianSplats3D/>
-  <SeletionForComparison/>
-  <ImageSliderInner/>
-  <ImageSlider/>
-  <ImageSelector/>
+  <Markdown/>
+  <Table/>
+  <Video/>
+  <Carousel/>
+  <Collapse/>
   <BibTeX/>
-  <Comment/>
+  <!-- <Comment/> -->
 </template>

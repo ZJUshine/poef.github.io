@@ -5,30 +5,38 @@ import { HomeFilled, SuccessFilled } from '@element-plus/icons-vue'
 
 // 个人主页
 const home = {
-    name: "My Blog",
-    link: "https://junyaohu.github.io/",
+    name: "Xuancun Lu",
+    link: "https://zjushine.github.io/",
 }
 
 // 项目主页
 const logo = {
-    name: "Template",
+    name: "POEF",
     link: "#",
 }
 
 // 右侧更多菜单
-const more_paper = {
-    "ExtDM": {
-        name: "ExtDM - CVPR 2024",
-        link: "https://zzcheng.top/ExtDM/",
+const more_links = {
+    "Paper": {
+        name: "Paper (PDF)",
+        link: "./POEF_NDSS2027.pdf",
     },
-    "MPOT": {
-        name: "MPOT - ICCV 2023",
-        link: "https://zzcheng.top/MPOT/",
+    "arXiv": {
+        name: "arXiv - 2412.16633",
+        link: "https://arxiv.org/abs/2412.16633",
     },
-    "ControlNet": {
-        name: "ControlNet - ICCV 2023",
-        link: "https://github.com/lllyasviel/ControlNet",
-    }
+    "Code": {
+        name: "Code - POEF",
+        link: "https://github.com/ZJUshine/POEF",
+    },
+    "Dataset": {
+        name: "Dataset - Harmful-Behavior",
+        link: "https://github.com/ZJUshine/Harmful-Behavior",
+    },
+    "USSLab": {
+        name: "USSLab, Zhejiang University",
+        link: "http://usslab.org/",
+    },
 }
 
 </script>
@@ -36,9 +44,9 @@ const more_paper = {
 <template>
     <!-- 设置页首始终悬浮顶部 -->
     <el-affix :offset="0" :style="{width: '100%'}">
-    
+
     <!-- 水平导航目录 -->
-    <el-menu 
+    <el-menu
         default-active="1"
         class="el-menu-demo"
         mode="horizontal"
@@ -49,7 +57,7 @@ const more_paper = {
             <el-icon :size="20"><HomeFilled /></el-icon>
             <a :href=home.link>{{ home.name }} </a>
         </el-menu-item>
-        
+
         <!-- 项目主页 -->
         <el-menu-item index="1">
             <el-icon :size="20"><SuccessFilled /></el-icon>
@@ -60,13 +68,19 @@ const more_paper = {
         <el-sub-menu index="2">
             <template #title>More</template>
             <el-menu-item index="2-1">
-                <a :href=more_paper.ExtDM.link>{{ more_paper.ExtDM.name }}</a>
+                <a :href=more_links.Paper.link>{{ more_links.Paper.name }}</a>
             </el-menu-item>
             <el-menu-item index="2-2">
-                <a :href=more_paper.MPOT.link>{{ more_paper.MPOT.name }}</a>
+                <a :href=more_links.arXiv.link>{{ more_links.arXiv.name }}</a>
             </el-menu-item>
             <el-menu-item index="2-3">
-                <a :href=more_paper.ControlNet.link>{{ more_paper.ControlNet.name }}</a>
+                <a :href=more_links.Code.link>{{ more_links.Code.name }}</a>
+            </el-menu-item>
+            <el-menu-item index="2-4">
+                <a :href=more_links.Dataset.link>{{ more_links.Dataset.name }}</a>
+            </el-menu-item>
+            <el-menu-item index="2-5">
+                <a :href=more_links.USSLab.link>{{ more_links.USSLab.name }}</a>
             </el-menu-item>
         </el-sub-menu>
 
@@ -125,5 +139,3 @@ a {
 }
 
 </style>
-
-  
