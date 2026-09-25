@@ -28,6 +28,13 @@ coverage
 *.sw?
 yarn.lock
 
+# OSS credentials — never commit
+.env.oss
+
+# Large binary assets — hosted on Alibaba Cloud OSS, not in the repo
+src/assets/gltfs/
+src/assets/videos/
+
 # LaTeX build artifacts (keep the .tex sources, drop the generated files)
 NDSS_2027_Easier_Said_than_Done_Camera_Ready/_minted/
 *.aux
