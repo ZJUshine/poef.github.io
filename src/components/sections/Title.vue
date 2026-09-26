@@ -13,7 +13,7 @@ const title = 'Easier Said Than Done:'
 const title_color = '#000000'
 
 // 标题补充，没有则置为''即可
-const title_supp = ' Unpacking the Intent–Behavior Gap in Jailbreaking LLM-based Robots'
+const title_supp = ' Unpacking Intent–Behavior Gap in Jailbreaking LLM-based Robots'
 
 // 标题补充颜色
 const title_supp_color = '#C0392B'
@@ -93,7 +93,7 @@ const buttons = [
   {
     disabled: false,
     name: "Paper",
-    link: "https://dx.doi.org/10.14722/ndss.2027.230002",
+    link: "https://dx.doi.org/10.14722/ndss.2027.230579",
     component: Document,
   },
   {

@@ -1,6 +1,6 @@
 # POEF Project Homepage
 
-Project page for ***Easier Said Than Done*: Unpacking the Intent–Behavior Gap in Jailbreaking LLM-based Robots** (NDSS 2027).
+Project page for ***Easier Said Than Done*: Unpacking Intent–Behavior Gap in Jailbreaking LLM-based Robots** (NDSS 2027).
 
 ## Acknowledgments
 

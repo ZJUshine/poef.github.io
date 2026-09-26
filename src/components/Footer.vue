@@ -17,7 +17,7 @@ const links = {
     <el-watermark :content="['POEF', 'NDSS 2027']" :gap="['60','0']" :z-index="0">
       <el-row justify="center">
         <p class="footer">
-          <b>POEF</b> — <i>Easier Said Than Done: Unpacking the Intent–Behavior Gap in Jailbreaking LLM-based Robots</i>.<br/>
+          <b>POEF</b> — <i>Easier Said Than Done: Unpacking Intent–Behavior Gap in Jailbreaking LLM-based Robots</i>.<br/>
 
           Built from the <a :href="links.template">academic project page template</a>, inspired by
           <a :href="links.Nerfies">Nerfies</a>, powered by
