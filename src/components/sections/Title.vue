@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 import { ElIcon } from 'element-plus'
-import { Document, Reading, Promotion, Coin, Film } from '@element-plus/icons-vue'
+import { Document, Reading, Promotion, Coin, Film, Message } from '@element-plus/icons-vue'
 
 // logo地址，没有则置为""即可
 const logo = ''
@@ -40,7 +40,7 @@ const authors = [
     name: "Xinfeng Li",
     icon: "",
     homepage: "https://letterligo.netlify.app/",
-    address_flag: "2,*"
+    address_flag: "2"
   },
   {
     name: "Chi Zhang",
@@ -52,7 +52,8 @@ const authors = [
     name: "Xiaoyu Ji",
     icon: "",
     homepage: "https://sites.google.com/site/xiaoyuijh/home",
-    address_flag: "1,*"
+    address_flag: "1",
+    corresponding: true
   },
   {
     name: "Wenyuan Xu",
@@ -80,7 +81,7 @@ const addresses = [
 ]
 
 // 共一和通讯提示
-const con_and_corresponding_author = "*: Corresponding Author."
+const con_and_corresponding_author = "✉: Corresponding Author."
 
 // 强调内容
 const emphases = [
@@ -158,7 +159,7 @@ const buttons = [
         <el-button class="title-button" type="primary" text>
           <el-avatar v-if="author.icon" :size="40" :src="author.icon" />
           <span class="author">
-            {{ author.name }}<sup v-if="author.address_flag" class="name_sup">{{ author.address_flag }}</sup>
+            {{ author.name }}<sup v-if="author.address_flag" class="name_sup">{{ author.address_flag }}</sup><el-icon v-if="author.corresponding" class="cor-icon"><Message /></el-icon>
           </span>
         </el-button>
       </a>
@@ -271,6 +272,14 @@ const buttons = [
 .name_sup {
   color: #606266;
   margin-left: 3px;
+}
+
+/* 通讯作者信封图标 */
+.cor-icon {
+  vertical-align: middle;
+  margin-left: 3px;
+  font-size: 14px;
+  color: #606266;
 }
 
 /* 地址属性 */
