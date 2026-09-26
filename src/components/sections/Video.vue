@@ -27,7 +27,7 @@ const embed = (id: string) => `https://www.youtube.com/embed/${id}`
     <el-divider />
 
     <el-row justify="center">
-      <h1 class="section-title">Real-World Attack Demo</h1>
+      <h1 class="section-title">Real-World Experiments Demo</h1>
     </el-row>
 
     <!-- 伦理提示 -->

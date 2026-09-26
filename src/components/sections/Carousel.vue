@@ -25,7 +25,7 @@ export default {
           caption: "Real-world setups. Left: the Franka Emika Panda arm with a fixed RGB-D camera and a microphone. Right: the Unitree G1 humanoid using its head camera and chest microphone array. Both are paired with a speaker that injects the adversarial voice instruction.",
         },
         {
-          path: "./images/Figure_7_compress.png",
+          path: "./images/Figure_7.png",
           caption: "Ten real-world jailbreak scenarios. Top: the full policy sequence for “pour water on socket” on both platforms. Bottom: snapshots of the remaining scenarios covering human, object, and environment risks.",
         },
       ],
@@ -39,7 +39,7 @@ export default {
     <el-divider />
 
     <el-row justify="center">
-      <h1 class="section-title">Real-World Attack Pipeline</h1>
+      <h1 class="section-title">Real-World Experiments</h1>
     </el-row>
 
     <el-row justify="center">

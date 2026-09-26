@@ -38,12 +38,12 @@ export default {
   <Teaser/>
   <Abstract/>
   <Dataset/>
+  <AssetBrowser/>
   <Echart/>
   <Markdown/>
   <Table/>
   <Carousel/>
   <Video/>
-  <AssetBrowser/>
   <BibTeX/>
   <!-- <Comment/> -->
 </template>

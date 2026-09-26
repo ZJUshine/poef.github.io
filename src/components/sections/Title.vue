@@ -92,7 +92,7 @@ const buttons = [
   {
     disabled: false,
     name: "Paper",
-    link: "./POEF_NDSS2027.pdf",
+    link: "https://dx.doi.org/10.14722/ndss.2027.230002",
     component: Document,
   },
   {

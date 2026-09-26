@@ -47,7 +47,7 @@ watch(filtered, (list) => {
     <el-divider />
 
     <el-row justify="center">
-      <h1 class="section-title">Asset Browser</h1>
+      <h1 class="section-title">Harmful-Behavior Preview</h1>
     </el-row>
 
     <el-row justify="center">
