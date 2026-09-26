@@ -159,7 +159,7 @@ const buttons = [
         <el-button class="title-button" type="primary" text>
           <el-avatar v-if="author.icon" :size="40" :src="author.icon" />
           <span class="author">
-            {{ author.name }}<sup v-if="author.address_flag" class="name_sup">{{ author.address_flag }}</sup><el-icon v-if="author.corresponding" class="cor-icon"><Message /></el-icon>
+            {{ author.name }}<sup v-if="author.address_flag" class="name_sup">{{ author.address_flag }}</sup><sup v-if="author.corresponding" class="cor-icon"><el-icon><Message /></el-icon></sup>
           </span>
         </el-button>
       </a>
@@ -276,9 +276,8 @@ const buttons = [
 
 /* 通讯作者信封图标 */
 .cor-icon {
-  vertical-align: middle;
-  margin-left: 3px;
-  font-size: 14px;
+  margin-left: 2px;
+  font-size: 12px;
   color: #606266;
 }
 
