@@ -2,12 +2,11 @@
 export default {
   data() {
     return {
-      // NDSS 2027 的正式条目出来之后，把下面的 arXiv 条目换掉
       bibtex: [
-        "@misc{lu2025poexpolicyexecutablejailbreak,",
-        "    title={POEX: Towards Policy Executable Jailbreak Attacks Against the LLM-based Robots},",
+        "@misc{lu2026easiersaiddoneunpacking,",
+        "    title={Easier Said Than Done: Unpacking Intent-Behavior Gap in Jailbreaking LLM-based Robots},",
         "    author={Xuancun Lu and Zhengxian Huang and Xinfeng Li and Chi Zhang and Xiaoyu Ji and Wenyuan Xu},",
-        "    year={2025},",
+        "    year={2026},",
         "    eprint={2412.16633},",
         "    archivePrefix={arXiv},",
         "    primaryClass={cs.RO},",
